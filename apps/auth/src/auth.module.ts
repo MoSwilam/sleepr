@@ -6,6 +6,7 @@ import { LoggerModule } from '@app/common';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
+import { LocalStrategy } from './strategies/local.strategy';
 
 @Module({
   imports: [
@@ -15,12 +16,12 @@ import * as Joi from 'joi';
       isGlobal: true,
       envFilePath: '../.env',
       ignoreEnvFile: process.env.NODE_ENV === 'production',
-      validationSchema: Joi.object({
-        MONGODB_URI: Joi.string().required(),
-        JWT_SECRET: Joi.string().required(),
-        JWT_EXPIRATION: Joi.number().required(),
-        PORT: Joi.number().required(),
-      }),
+      // validationSchema: Joi.object({
+      //   MONGODB_URI: Joi.string().required(),
+      //   JWT_SECRET: Joi.string().required(),
+      //   JWT_EXPIRATION: Joi.number().required(),
+      //   PORT: Joi.number().required(),
+      // }),
     }),
     JwtModule.registerAsync({
       useFactory: (configService: ConfigService) => ({
@@ -34,6 +35,6 @@ import * as Joi from 'joi';
 
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, LocalStrategy],
 })
 export class AuthModule {}
