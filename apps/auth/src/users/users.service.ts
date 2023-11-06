@@ -21,5 +21,6 @@ export class UsersService {
     if (!isPasswordValid) {
       throw new UnauthorizedException('Invalid credentials');
     }
+    return user;
   }
 }
