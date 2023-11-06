@@ -19,9 +19,4 @@ export class AuthController {
     await this.authService.login(user, response);
     response.send(user)
   }
-
-  @Get()
-  getHello(): string {
-    return this.authService.getHello();
-  }
 }
