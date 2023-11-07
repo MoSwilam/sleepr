@@ -27,6 +27,10 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     return document;
   }
 
+  async isDocumentExists(filterQuery: FilterQuery<TDocument>): Promise<boolean> {
+    return !!await this.model.exists(filterQuery);
+  }
+
   async findOneAndUpdate(
     filterQuery: FilterQuery<TDocument>,
     update: UpdateQuery<TDocument>

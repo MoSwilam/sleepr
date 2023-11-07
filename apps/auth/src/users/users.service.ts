@@ -17,9 +17,9 @@ export class UsersService {
   }
 
   async validaUserDto(data: CreateUserDto) {
-    const user = await this.userRepository.findOne({ email: data.email });
+    const user = await this.userRepository.isDocumentExists({ email: data.email });
     if (user) {
-      throw new UnprocessableEntityException('Email already in use');
+      throw new UnprocessableEntityException('User already exists');
     }
   }
 
