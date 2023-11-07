@@ -8,7 +8,7 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
         transport: {
           target: 'pino-pretty',
           options: {
-            ignore: 'pid,hostname,context',
+            ignore: 'pid,hostname',
             singleLine: true,
           },
         }
