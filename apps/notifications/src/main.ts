@@ -1,11 +1,11 @@
 import { NestFactory } from '@nestjs/core';
-import { PaymentsModule } from './payments.module';
+import { NotificationsModule } from './notifications.module';
 import { ConfigService } from '@nestjs/config';
 import { Transport } from '@nestjs/microservices';
 import { Logger } from 'nestjs-pino';
 
 async function bootstrap() {
-  const app = await NestFactory.create(PaymentsModule);
+  const app = await NestFactory.create(NotificationsModule);
   const configService = app.get(ConfigService);
   app.connectMicroservice({
     transport: Transport.TCP,
@@ -16,6 +16,6 @@ async function bootstrap() {
   })
   app.useLogger(app.get(Logger))
   await app.startAllMicroservices();
-  console.log(`------------ Payments App is running on: ${configService.get('PORT')} ------------`);
+  console.log(`------------ Notifications App is running on: ${configService.get('PORT')} ------------`);
 }
 bootstrap();

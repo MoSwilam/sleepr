@@ -15,7 +15,6 @@ import { AUTH_SERVICE } from '@app/common';
     DatabaseModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      ignoreEnvFile: process.env.NODE_ENV === 'production',
       validationSchema: Joi.object({
         MONGODB_URI: Joi.string().required(),
         PORT: Joi.number().required(),

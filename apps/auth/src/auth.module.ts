@@ -16,7 +16,6 @@ import { JwtStrategy } from './strategies/jwt.strategy';
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '../.env',
-      ignoreEnvFile: process.env.NODE_ENV === 'production',
       validationSchema: Joi.object({
         MONGODB_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
