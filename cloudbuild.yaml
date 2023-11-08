@@ -1,5 +1,6 @@
 steps:
-  # AUTH APP BUILD DOCKER IMAGE
+  # AUTH APP
+  # BUILD DOCKER IMAGE
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
@@ -10,8 +11,13 @@ steps:
         'apps/auth/Dockerfile',
         '.',
       ]
+  # PUSH DOCKER IMAGE TO GCP
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/auth/production']
 
-  # NOTIFICATIONS APP BUILD DOCKER IMAGE
+
+  # NOTIFICATIONS APP
+  # BUILD DOCKER IMAGE
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
@@ -22,8 +28,13 @@ steps:
         'apps/notifications/Dockerfile',
         '.',
       ]
+  # PUSH DOCKER IMAGE TO GCP
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/notifications/production']
 
-  # PAYMENTS APP BUILD DOCKER IMAGE
+
+  # PAYMENTS APP
+  # BUILD DOCKER IMAGE
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
@@ -34,8 +45,13 @@ steps:
         'apps/payments/Dockerfile',
         '.',
       ]
+  # PUSH DOCKER IMAGE TO GCP
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/payments/production']
 
-  # notifications APP BUILD DOCKER IMAGE
+
+  # notifications APP
+  # BUILD DOCKER IMAGE
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
@@ -46,3 +62,6 @@ steps:
         'apps/notifications/Dockerfile',
         '.',
       ]
+  # PUSH DOCKER IMAGE TO GCP
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/notifications/production']
