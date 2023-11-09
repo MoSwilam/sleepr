@@ -15,5 +15,4 @@ export class ReservationsRepository extends AbstractRepository<ReservationDocume
   ) {
     super(reservationModel);
   }
-
 }

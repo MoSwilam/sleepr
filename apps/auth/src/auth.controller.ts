@@ -25,7 +25,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @MessagePattern('authenticate')
   async authenticate(@Payload() data: any) {
-    console.log({ dataFromAuthController: data });
+    // console.log({ dataFromAuthController: data });
     return data.user;
     //  return await this.authService.loginMicroservice(data);
   }

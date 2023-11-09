@@ -13,6 +13,12 @@ import { AUTH_SERVICE } from '@app/common';
 @Module({
   imports: [
     DatabaseModule,
+    DatabaseModule.forFeature([
+      {
+        name: ReservationDocument.name,
+        schema: ReservationSchema,
+      },
+    ]),
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
@@ -24,12 +30,6 @@ import { AUTH_SERVICE } from '@app/common';
         PAYMENTS_PORT: Joi.number().required(),
       }),
     }),
-    DatabaseModule.forFeature([
-      {
-        name: ReservationDocument.name,
-        schema: ReservationSchema,
-      },
-    ]),
     LoggerModule,
     ClientsModule.registerAsync([
       {
@@ -58,5 +58,6 @@ import { AUTH_SERVICE } from '@app/common';
   ],
   controllers: [ReservationsController],
   providers: [ReservationsService, ReservationsRepository],
+  exports: [ReservationsService, ReservationsRepository],
 })
 export class ReservationsModule {}

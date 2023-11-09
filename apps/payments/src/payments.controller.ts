@@ -11,7 +11,7 @@ export class PaymentsController {
   @MessagePattern('create_charge')
   @UsePipes(new ValidationPipe())
   async createCharge(@Payload() data: PaymentsCreateChargeDto) {
-    console.log({ dataFromPaymentsController: data });
+    // console.log({ dataFromPaymentsController: data });
     return this.paymentsService.createCharge(data);
   }
 }
