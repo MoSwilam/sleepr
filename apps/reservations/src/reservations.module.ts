@@ -21,6 +21,7 @@ import { AUTH_SERVICE } from '@app/common';
     ]),
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '../.env',
       validationSchema: Joi.object({
         MONGODB_URI: Joi.string().required(),
         PORT: Joi.number().required(),
