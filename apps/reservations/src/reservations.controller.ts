@@ -8,7 +8,6 @@ import { CurrentUser, IUserDto, JwtAuthGuard } from '@app/common';
 export class ReservationsController {
   constructor(private readonly reservationsService: ReservationsService) {}
 
-
   @Post()
   @UseGuards(JwtAuthGuard)
   create(@Body() createReservationDto: CreateReservationDto, @CurrentUser() user: IUserDto) {
