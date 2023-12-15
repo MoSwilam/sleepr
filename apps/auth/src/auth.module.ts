@@ -22,6 +22,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
         JWT_EXPIRATION: Joi.number().required(),
         HTTP_PORT: Joi.number().required(),
         TCP_PORT: Joi.number().required(),
+        SWAGGER_URI: Joi.string().required(),
       }),
     }),
     JwtModule.registerAsync({
