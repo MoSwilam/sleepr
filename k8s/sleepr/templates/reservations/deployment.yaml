@@ -27,7 +27,7 @@ spec:
         - name: PORT
           value: "3004"
         - name: AUTH_HOST
-          value: "auth"
+          value: "auth-tcp"
         - name: SWAGGER_URI
           value: "/docs/reservations"
         - name: AUTH_PORT
