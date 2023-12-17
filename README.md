@@ -24,50 +24,41 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Welcome to the Microservices Booking System! This system is composed of four microservices, each serving a specific function:
+
+1- Auth Service:
+  - Responsible for user authentication.
+  - Exposes endpoints for user signup and login.
+
+2- Reservation Service:
+  - Manages the creation of reservations.
+  - Initiates an internal TCP call to the Payment Service for charge creation.
+  - Coordinates with the Payment Service to process charges on the provided user's card information.
+  - Triggers an additional internal call to the Notifications Service for dispatching email notifications.
+
+3- Payment Service:
+  - Handles payment processing, utilizing the Stripe API.
+  - Receives internal calls from the Reservation Service to create charges.
+  - Initiates internal calls to the Notifications Service for successful charge notifications.
+
+4- Notifications Service:
+  - Sends email notifications to users.
+  - Receives internal calls from the Payment Service for successful charge notifications.
+
+Feel free to explore each microservice to understand their functionalities and interactions. If you have any questions or need assistance, don't hesitate to reach out. Happy coding!
 
 ## Installation
 
-```bash
-$ pnpm install
-```
+Install NodeJs and Docker in order to run the apps in containers using the provided docker compose file
 
 ## Running the app
 
-```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
-```
-
-## Test
+Instantiate .env files:
+For each service within the apps directory, copy the .env.example file to a new .env file:
+and provide the relevant env variables.
 
 ```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+docker compose up --build -d
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
