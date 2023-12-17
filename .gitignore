@@ -4,6 +4,7 @@
 **/node_modules
 
 apps/*/node_modules
+apps/*/.env
 
 # Logs
 logs
