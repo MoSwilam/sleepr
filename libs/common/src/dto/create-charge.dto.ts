@@ -9,6 +9,10 @@ export class CreateChargeDto {
   @Type(() => CardDto)
   card: CardDto
 
+
+  /**
+  * amount to be charged
+  */
   @IsNumber()
   amount: number;
 }

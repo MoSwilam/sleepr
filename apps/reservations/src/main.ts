@@ -21,7 +21,7 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup(`${process.env.SWAGGER_URI}`, app, document);
+  SwaggerModule.setup(`/docs/reservations`, app, document);
   await app.listen(configService.get('PORT'));
   console.log(`------------ Reservations App is running on: ${configService.get('PORT')} ------------`);
 }

@@ -5,7 +5,15 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/reservations/tsconfig.app.json"
+    "tsConfigPath": "apps/reservations/tsconfig.app.json",
+    "plugins": [{
+      "name": "@nestjs/swagger",
+      "options": {
+        "dtoFileNameSuffix": [".types.ts", ".dto.ts", "ro.ts", "dto.ts"],
+        "controllerFileNameSuffix": [".controller.ts"],
+        "introspectComments": true
+      }
+    }]
   },
   "projects": {
     "common": {

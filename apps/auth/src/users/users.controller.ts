@@ -3,14 +3,17 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 import { CurrentUser } from '../../../../libs/common/src/decorators/current-user.decorator';
 import { JwtAuthGuard } from '../guards/jwt-auth.guard';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('users')
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
   @Post()
+  @ApiOperation({ summary: 'Creates a new user' })
   createUser(@Body() data: CreateUserDto) {
-    return this.usersService.createUser(data);
+        return this.usersService.createUser(data);
   }
 
   @Get()
