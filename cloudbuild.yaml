@@ -11,9 +11,11 @@ steps:
         'apps/auth/Dockerfile',
         '.',
       ]
+
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/auth/production']
+
 
 
   # RESERVATIONS APP
