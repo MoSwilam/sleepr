@@ -6,14 +6,14 @@ steps:
       [
         'build',
         '-t',
-        'us-east4-docker.pkg.dev/sleepr-404515/auth/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/auth/production',
         '-f',
         'apps/auth/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/auth/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/auth/production']
 
 
   # RESERVATIONS APP
@@ -23,14 +23,14 @@ steps:
       [
         'build',
         '-t',
-        'us-east4-docker.pkg.dev/sleepr-404515/reservations/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production',
         '-f',
         'apps/reservations/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/reservations/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production']
 
 
   # PAYMENTS APP
@@ -40,14 +40,14 @@ steps:
       [
         'build',
         '-t',
-        'us-east4-docker.pkg.dev/sleepr-404515/payments/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/payments/production',
         '-f',
         'apps/payments/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/payments/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/payments/production']
 
 
   # notifications APP
@@ -57,11 +57,11 @@ steps:
       [
         'build',
         '-t',
-        'us-east4-docker.pkg.dev/sleepr-404515/notifications/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production',
         '-f',
         'apps/notifications/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east4-docker.pkg.dev/sleepr-404515/notifications/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production']
