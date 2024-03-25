@@ -30,6 +30,6 @@ async function bootstrap() {
 
   await app.startAllMicroservices();
   await app.listen(configService.get<number>('HTTP_PORT'));
-  console.log(`---------4----*=- Auth App is running on: ${configService.get('HTTP_PORT')} ------------`);
+  console.log(`---------5----*=- Auth App is running on: ${configService.get('HTTP_PORT')} ------------`);
 }
 bootstrap();
