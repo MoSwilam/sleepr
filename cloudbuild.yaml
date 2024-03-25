@@ -6,7 +6,7 @@ steps:
       [
         'build',
         '-t',
-        'us-east1-docker.pkg.dev/garfield-store/auth/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/auth/production',
         '-f',
         'apps/auth/Dockerfile',
         '.',
@@ -14,7 +14,7 @@ steps:
 
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east1-docker.pkg.dev/garfield-store/auth/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/auth/production']
 
 
 
@@ -25,14 +25,14 @@ steps:
       [
         'build',
         '-t',
-        'us-east1-docker.pkg.dev/garfield-store/reservations/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production',
         '-f',
         'apps/reservations/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east1-docker.pkg.dev/garfield-store/reservations/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production']
 
 
   # PAYMENTS APP
@@ -42,14 +42,14 @@ steps:
       [
         'build',
         '-t',
-        'us-east1-docker.pkg.dev/garfield-store/payments/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/payments/production',
         '-f',
         'apps/payments/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east1-docker.pkg.dev/garfield-store/payments/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/payments/production']
 
 
   # notifications APP
@@ -59,11 +59,11 @@ steps:
       [
         'build',
         '-t',
-        'us-east1-docker.pkg.dev/garfield-store/notifications/production',
+        'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production',
         '-f',
         'apps/notifications/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east1-docker.pkg.dev/garfield-store/notifications/production']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production']
