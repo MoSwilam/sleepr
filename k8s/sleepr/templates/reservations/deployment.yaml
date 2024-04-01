@@ -11,12 +11,11 @@ spec:
       app: reservations
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: reservations
     spec:
       containers:
-      - image: us-east4-docker.pkg.dev/sleepr-404515/reservations/production
+      - image: europe-central2-docker.pkg.dev/sleepr-417301/reservations/production
         name: reservations
         env:
         - name: MONGODB_URI
@@ -24,17 +23,4 @@ spec:
             secretKeyRef:
               name: mongodb
               key: connectionString
-        - name: PORT
-          value: "3004"
-        - name: AUTH_HOST
-          value: "auth-tcp"
-        - name: SWAGGER_URI
-          value: "/docs/reservations"
-        - name: AUTH_PORT
-          value: "3002"
-        - name: PAYMENTS_HOST
-          value: "payments"
-        - name: PAYMENTS_PORT
-          value: "3001"
-        ports:
-        - containerPort: 3004
+
