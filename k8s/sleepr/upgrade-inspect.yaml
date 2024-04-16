@@ -1,0 +1,331 @@
+chart:
+  files:
+  - data: IyBQYXR0ZXJucyB0byBpZ25vcmUgd2hlbiBidWlsZGluZyBwYWNrYWdlcy4KIyBUaGlzIHN1cHBvcnRzIHNoZWxsIGdsb2IgbWF0Y2hpbmcsIHJlbGF0aXZlIHBhdGggbWF0Y2hpbmcsIGFuZAojIG5lZ2F0aW9uIChwcmVmaXhlZCB3aXRoICEpLiBPbmx5IG9uZSBwYXR0ZXJuIHBlciBsaW5lLgouRFNfU3RvcmUKIyBDb21tb24gVkNTIGRpcnMKLmdpdC8KLmdpdGlnbm9yZQouYnpyLwouYnpyaWdub3JlCi5oZy8KLmhnaWdub3JlCi5zdm4vCiMgQ29tbW9uIGJhY2t1cCBmaWxlcwoqLnN3cAoqLmJhawoqLnRtcAoqLm9yaWcKKn4KIyBWYXJpb3VzIElERXMKLnByb2plY3QKLmlkZWEvCioudG1wcm9qCi52c2NvZGUvCg==
+    name: .helmignore
+  - data: ""
+    name: upgrade-inspect.yaml
+  lock: null
+  metadata:
+    apiVersion: v2
+    appVersion: 1.16.0
+    description: A Helm chart for Kubernetes
+    name: sleepr
+    type: application
+    version: 0.1.0
+  schema: null
+  templates:
+  - data: YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGxhYmVsczoKICAgIGFwcDogYXV0aAogIG5hbWU6IGF1dGgKc3BlYzoKICByZXBsaWNhczogMQogIHNlbGVjdG9yOgogICAgbWF0Y2hMYWJlbHM6CiAgICAgIGFwcDogYXV0aAogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGxhYmVsczoKICAgICAgICBhcHA6IGF1dGgKICAgIHNwZWM6CiAgICAgIGNvbnRhaW5lcnM6CiAgICAgIC0gaW1hZ2U6IGV1cm9wZS1jZW50cmFsMi1kb2NrZXIucGtnLmRldi9zbGVlcHItNDE3MzAxL2F1dGgvcHJvZHVjdGlvbgogICAgICAgIG5hbWU6IGF1dGgKICAgICAgICBlbnY6CiAgICAgICAgLSBuYW1lOiBNT05HT0RCX1VSSQogICAgICAgICAgdmFsdWVGcm9tOgogICAgICAgICAgICBzZWNyZXRLZXlSZWY6CiAgICAgICAgICAgICAgbmFtZTogbW9uZ29kYgogICAgICAgICAgICAgIGtleTogY29ubmVjdGlvblN0cmluZwogICAgICAgIC0gbmFtZTogSldUX1NFQ1JFVAogICAgICAgICAgdmFsdWVGcm9tOgogICAgICAgICAgICBzZWNyZXRLZXlSZWY6CiAgICAgICAgICAgICAgbmFtZTogand0CiAgICAgICAgICAgICAga2V5OiBqd3RTZWNyZXQKICAgICAgICAtIG5hbWU6IFRDUF9QT1JUCiAgICAgICAgICB2YWx1ZTogIjMwMDIiCiAgICAgICAgLSBuYW1lOiBIVFRQX1BPUlQKICAgICAgICAgIHZhbHVlOiAiMzAwMyIKICAgICAgICAtIG5hbWU6IEpXVF9FWFBJUkFUSU9OCiAgICAgICAgICB2YWx1ZTogIjM2MDAiCiAgICAgICAgLSBuYW1lOiBTV0FHR0VSX1VSSQogICAgICAgICAgdmFsdWU6ICIvZG9jcy9hdXRoIgogICAgICAgIHBvcnRzOgogICAgICAgIC0gY29udGFpbmVyUG9ydDogMzAwMiAjIFRDUAogICAgICAgIC0gY29udGFpbmVyUG9ydDogMzAwMyAjIEhUVFAKCg==
+    name: templates/auth/deployment.yaml
+  - data: YXBpVmVyc2lvbjogdjEKa2luZDogU2VydmljZQptZXRhZGF0YToKICBsYWJlbHM6CiAgICBhcHA6IGF1dGgKICBuYW1lOiBhdXRoLWh0dHAKc3BlYzoKICBwb3J0czoKICAtIG5hbWU6ICJodHRwIgogICAgcG9ydDogMzAwMwogICAgcHJvdG9jb2w6IFRDUAogICAgdGFyZ2V0UG9ydDogMzAwMwogIHNlbGVjdG9yOgogICAgYXBwOiBhdXRoCiAgdHlwZTogTm9kZVBvcnQK
+    name: templates/auth/service-http.yaml
+  - data: YXBpVmVyc2lvbjogdjEKa2luZDogU2VydmljZQptZXRhZGF0YToKICBsYWJlbHM6CiAgICBhcHA6IGF1dGgKICBuYW1lOiBhdXRoLXRjcApzcGVjOgogIHBvcnRzOgogIC0gbmFtZTogInRjcCIKICAgIHBvcnQ6IDMwMDIKICAgIHByb3RvY29sOiBUQ1AKICAgIHRhcmdldFBvcnQ6IDMwMDIKICBzZWxlY3RvcjoKICAgIGFwcDogYXV0aAogIHR5cGU6IENsdXN0ZXJJUAo=
+    name: templates/auth/service-tcp.yaml
+  - data: YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGxhYmVsczoKICAgIGFwcDogbm90aWZpY2F0aW9ucwogIG5hbWU6IG5vdGlmaWNhdGlvbnMKc3BlYzoKICByZXBsaWNhczogMQogIHNlbGVjdG9yOgogICAgbWF0Y2hMYWJlbHM6CiAgICAgIGFwcDogbm90aWZpY2F0aW9ucwogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGxhYmVsczoKICAgICAgICBhcHA6IG5vdGlmaWNhdGlvbnMKICAgIHNwZWM6CiAgICAgIGNvbnRhaW5lcnM6CiAgICAgIC0gaW1hZ2U6IGV1cm9wZS1jZW50cmFsMi1kb2NrZXIucGtnLmRldi9zbGVlcHItNDE3MzAxL25vdGlmaWNhdGlvbnMvcHJvZHVjdGlvbgogICAgICAgIG5hbWU6IG5vdGlmaWNhdGlvbnMKICAgICAgICBlbnY6CiAgICAgICAgICAtIG5hbWU6IFBPUlQKICAgICAgICAgICAgdmFsdWU6ICIzMDAwIgogICAgICAgICAgLSBuYW1lOiBHT09HTEVfT0FVVEhfQ0xJRU5UX0lECiAgICAgICAgICAgIHZhbHVlOiAiMjI3MDcxOTQwMjY3LWJncXI4dTY3YTkyZGxuazU1NmNvYnVsN3Z2b29iZGJtLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIgogICAgICAgICAgLSBuYW1lOiBTTVRQX1VTRVIKICAgICAgICAgICAgdmFsdWU6ICJtb3N3aWxhbWRldkBnbWFpbC5jb20iCiAgICAgICAgICAtIG5hbWU6ICJHT09HTEVfT0FVVEhfQ0xJRU5UX1NFQ1JFVCIKICAgICAgICAgICAgdmFsdWVGcm9tOgogICAgICAgICAgICAgIHNlY3JldEtleVJlZjoKICAgICAgICAgICAgICAgIG5hbWU6IGdvb2dsZQogICAgICAgICAgICAgICAga2V5OiBjbGllbnRTZWNyZXQKICAgICAgICAgIC0gbmFtZTogIkdPT0dMRV9PQVVUSF9SRUZSRVNIX1RPS0VOIgogICAgICAgICAgICB2YWx1ZUZyb206CiAgICAgICAgICAgICAgc2VjcmV0S2V5UmVmOgogICAgICAgICAgICAgICAgbmFtZTogZ29vZ2xlCiAgICAgICAgICAgICAgICBrZXk6IHJlZnJlc2hUb2tlbgogICAgICAgIHBvcnRzOgogICAgICAgIC0gY29udGFpbmVyUG9ydDogMzAwMA==
+    name: templates/notifications/deployment.yaml
+  - data: YXBpVmVyc2lvbjogdjEKa2luZDogU2VydmljZQptZXRhZGF0YToKICBsYWJlbHM6CiAgICBhcHA6IG5vdGlmaWNhdGlvbnMKICBuYW1lOiBub3RpZmljYXRpb25zCnNwZWM6CiAgcG9ydHM6CiAgLSBuYW1lOiAidGNwIgogICAgcG9ydDogMzAwMAogICAgcHJvdG9jb2w6IFRDUAogICAgdGFyZ2V0UG9ydDogMzAwMAogIHNlbGVjdG9yOgogICAgYXBwOiBub3RpZmljYXRpb25zCiAgdHlwZTogQ2x1c3RlcklQCgo=
+    name: templates/notifications/service.yaml
+  - data: YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGxhYmVsczoKICAgIGFwcDogcGF5bWVudHMKICBuYW1lOiBwYXltZW50cwpzcGVjOgogIHJlcGxpY2FzOiAxCiAgc2VsZWN0b3I6CiAgICBtYXRjaExhYmVsczoKICAgICAgYXBwOiBwYXltZW50cwogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGxhYmVsczoKICAgICAgICBhcHA6IHBheW1lbnRzCiAgICBzcGVjOgogICAgICBjb250YWluZXJzOgogICAgICAtIGltYWdlOiBldXJvcGUtY2VudHJhbDItZG9ja2VyLnBrZy5kZXYvc2xlZXByLTQxNzMwMS9wYXltZW50cy9wcm9kdWN0aW9uCiAgICAgICAgbmFtZTogcGF5bWVudHMKICAgICAgICBlbnY6CiAgICAgICAgLSBuYW1lOiBQT1JUCiAgICAgICAgICB2YWx1ZTogIjMwMDEiCiAgICAgICAgLSBuYW1lOiBOT1RJRklDQVRJT05TX0hPU1QKICAgICAgICAgIHZhbHVlOiBub3RpZmljYXRpb25zCiAgICAgICAgLSBuYW1lOiBOT1RJRklDQVRJT05TX1BPUlQKICAgICAgICAgIHZhbHVlOiAiMzAwMCIKICAgICAgICAtIG5hbWU6IFNUUklQRV9TRUNSRVRfS0VZCiAgICAgICAgICB2YWx1ZUZyb206CiAgICAgICAgICAgIHNlY3JldEtleVJlZjoKICAgICAgICAgICAgICBuYW1lOiBzdHJpcGUKICAgICAgICAgICAgICBrZXk6IGFwaUtleQogICAgICAgIHBvcnRzOgogICAgICAgIC0gY29udGFpbmVyUG9ydDogMzAwMQ==
+    name: templates/payments/deployemnt.yaml
+  - data: YXBpVmVyc2lvbjogdjEKa2luZDogU2VydmljZQptZXRhZGF0YToKICBsYWJlbHM6CiAgICBhcHA6IHBheW1lbnRzCiAgbmFtZTogcGF5bWVudHMKc3BlYzoKICBwb3J0czoKICAtIG5hbWU6ICJ0Y3AiCiAgICBwb3J0OiAzMDAxCiAgICBwcm90b2NvbDogVENQCiAgICB0YXJnZXRQb3J0OiAzMDAxCiAgc2VsZWN0b3I6CiAgICBhcHA6IHBheW1lbnRzCiAgdHlwZTogQ2x1c3RlcklQCgo=
+    name: templates/payments/service.yaml
+  - data: YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGxhYmVsczoKICAgIGFwcDogcmVzZXJ2YXRpb25zCiAgbmFtZTogcmVzZXJ2YXRpb25zCnNwZWM6CiAgcmVwbGljYXM6IDEKICBzZWxlY3RvcjoKICAgIG1hdGNoTGFiZWxzOgogICAgICBhcHA6IHJlc2VydmF0aW9ucwogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGxhYmVsczoKICAgICAgICBhcHA6IHJlc2VydmF0aW9ucwogICAgc3BlYzoKICAgICAgY29udGFpbmVyczoKICAgICAgLSBpbWFnZTogZXVyb3BlLWNlbnRyYWwyLWRvY2tlci5wa2cuZGV2L3NsZWVwci00MTczMDEvcmVzZXJ2YXRpb25zL3Byb2R1Y3Rpb24KICAgICAgICBuYW1lOiByZXNlcnZhdGlvbnMKICAgICAgICBlbnY6CiAgICAgICAgLSBuYW1lOiBNT05HT0RCX1VSSQogICAgICAgICAgdmFsdWVGcm9tOgogICAgICAgICAgICBzZWNyZXRLZXlSZWY6CiAgICAgICAgICAgICAgbmFtZTogbW9uZ29kYgogICAgICAgICAgICAgIGtleTogY29ubmVjdGlvblN0cmluZwogICAgICAgIC0gbmFtZTogUE9SVAogICAgICAgICAgdmFsdWU6ICIzMDA0IgogICAgICAgIC0gbmFtZTogQVVUSF9IT1NUCiAgICAgICAgICB2YWx1ZTogImF1dGgtdGNwIgogICAgICAgIC0gbmFtZTogQVVUSF9QT1JUCiAgICAgICAgICB2YWx1ZTogIjMwMDIiCiAgICAgICAgLSBuYW1lOiBQQVlNRU5UU19IT1NUCiAgICAgICAgICB2YWx1ZTogInBheW1lbnRzIgogICAgICAgIC0gbmFtZTogUEFZTUVOVFNfUE9SVAogICAgICAgICAgdmFsdWU6ICIzMDAxIgogICAgICAgIHBvcnRzOgogICAgICAgIC0gY29udGFpbmVyUG9ydDogMzAwNAoK
+    name: templates/reservations/deployment.yaml
+  - data: YXBpVmVyc2lvbjogdjEKa2luZDogU2VydmljZQptZXRhZGF0YToKICBjcmVhdGlvblRpbWVzdGFtcDogbnVsbAogIGxhYmVsczoKICAgIGFwcDogcmVzZXJ2YXRpb25zCiAgbmFtZTogcmVzZXJ2YXRpb25zCnNwZWM6CiAgcG9ydHM6CiAgLSBuYW1lOiAiaHR0cCIKICAgIHBvcnQ6IDMwMDQKICAgIHByb3RvY29sOiBUQ1AKICAgIHRhcmdldFBvcnQ6IDMwMDQKICBzZWxlY3RvcjoKICAgIGFwcDogcmVzZXJ2YXRpb25zCiAgdHlwZTogTm9kZVBvcnQKc3RhdHVzOgogIGxvYWRCYWxhbmNlcjoge30K
+    name: templates/reservations/service.yaml
+  values:
+    affinity: {}
+    autoscaling:
+      enabled: false
+      maxReplicas: 100
+      minReplicas: 1
+      targetCPUUtilizationPercentage: 80
+    fullnameOverride: ""
+    image:
+      pullPolicy: IfNotPresent
+      repository: nginx
+      tag: ""
+    imagePullSecrets: []
+    ingress:
+      annotations: {}
+      className: ""
+      enabled: false
+      hosts:
+      - host: chart-example.local
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+      tls: []
+    nameOverride: ""
+    nodeSelector: {}
+    podAnnotations: {}
+    podLabels: {}
+    podSecurityContext: {}
+    replicaCount: 1
+    resources: {}
+    securityContext: {}
+    service:
+      port: 80
+      type: ClusterIP
+    serviceAccount:
+      annotations: {}
+      automount: true
+      create: true
+      name: ""
+    tolerations: []
+    volumeMounts: []
+    volumes: []
+info:
+  deleted: ""
+  description: Dry run complete
+  first_deployed: "2024-03-29T03:53:45.998667Z"
+  last_deployed: "2024-04-16T16:38:00.693187+01:00"
+  status: pending-upgrade
+manifest: |
+  ---
+  # Source: sleepr/templates/auth/service-http.yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: auth
+    name: auth-http
+  spec:
+    ports:
+    - name: "http"
+      port: 3003
+      protocol: TCP
+      targetPort: 3003
+    selector:
+      app: auth
+    type: NodePort
+  ---
+  # Source: sleepr/templates/auth/service-tcp.yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: auth
+    name: auth-tcp
+  spec:
+    ports:
+    - name: "tcp"
+      port: 3002
+      protocol: TCP
+      targetPort: 3002
+    selector:
+      app: auth
+    type: ClusterIP
+  ---
+  # Source: sleepr/templates/notifications/service.yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: notifications
+    name: notifications
+  spec:
+    ports:
+    - name: "tcp"
+      port: 3000
+      protocol: TCP
+      targetPort: 3000
+    selector:
+      app: notifications
+    type: ClusterIP
+  ---
+  # Source: sleepr/templates/payments/service.yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: payments
+    name: payments
+  spec:
+    ports:
+    - name: "tcp"
+      port: 3001
+      protocol: TCP
+      targetPort: 3001
+    selector:
+      app: payments
+    type: ClusterIP
+  ---
+  # Source: sleepr/templates/reservations/service.yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: null
+    labels:
+      app: reservations
+    name: reservations
+  spec:
+    ports:
+    - name: "http"
+      port: 3004
+      protocol: TCP
+      targetPort: 3004
+    selector:
+      app: reservations
+    type: NodePort
+  status:
+    loadBalancer: {}
+  ---
+  # Source: sleepr/templates/auth/deployment.yaml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: auth
+    name: auth
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: auth
+    template:
+      metadata:
+        labels:
+          app: auth
+      spec:
+        containers:
+        - image: europe-central2-docker.pkg.dev/sleepr-417301/auth/production
+          name: auth
+          env:
+          - name: MONGODB_URI
+            valueFrom:
+              secretKeyRef:
+                name: mongodb
+                key: connectionString
+          - name: JWT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: jwt
+                key: jwtSecret
+          - name: TCP_PORT
+            value: "3002"
+          - name: HTTP_PORT
+            value: "3003"
+          - name: JWT_EXPIRATION
+            value: "3600"
+          - name: SWAGGER_URI
+            value: "/docs/auth"
+          ports:
+          - containerPort: 3002 # TCP
+          - containerPort: 3003 # HTTP
+  ---
+  # Source: sleepr/templates/notifications/deployment.yaml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: notifications
+    name: notifications
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: notifications
+    template:
+      metadata:
+        labels:
+          app: notifications
+      spec:
+        containers:
+        - image: europe-central2-docker.pkg.dev/sleepr-417301/notifications/production
+          name: notifications
+          env:
+            - name: PORT
+              value: "3000"
+            - name: GOOGLE_OAUTH_CLIENT_ID
+              value: "227071940267-bgqr8u67a92dlnk556cobul7vvoobdbm.apps.googleusercontent.com"
+            - name: SMTP_USER
+              value: "moswilamdev@gmail.com"
+            - name: "GOOGLE_OAUTH_CLIENT_SECRET"
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: clientSecret
+            - name: "GOOGLE_OAUTH_REFRESH_TOKEN"
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: refreshToken
+          ports:
+          - containerPort: 3000
+  ---
+  # Source: sleepr/templates/payments/deployemnt.yaml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: payments
+    name: payments
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: payments
+    template:
+      metadata:
+        labels:
+          app: payments
+      spec:
+        containers:
+        - image: europe-central2-docker.pkg.dev/sleepr-417301/payments/production
+          name: payments
+          env:
+          - name: PORT
+            value: "3001"
+          - name: NOTIFICATIONS_HOST
+            value: notifications
+          - name: NOTIFICATIONS_PORT
+            value: "3000"
+          - name: STRIPE_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: stripe
+                key: apiKey
+          ports:
+          - containerPort: 3001
+  ---
+  # Source: sleepr/templates/reservations/deployment.yaml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: reservations
+    name: reservations
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: reservations
+    template:
+      metadata:
+        labels:
+          app: reservations
+      spec:
+        containers:
+        - image: europe-central2-docker.pkg.dev/sleepr-417301/reservations/production
+          name: reservations
+          env:
+          - name: MONGODB_URI
+            valueFrom:
+              secretKeyRef:
+                name: mongodb
+                key: connectionString
+          - name: PORT
+            value: "3004"
+          - name: AUTH_HOST
+            value: "auth-tcp"
+          - name: AUTH_PORT
+            value: "3002"
+          - name: PAYMENTS_HOST
+            value: "payments"
+          - name: PAYMENTS_PORT
+            value: "3001"
+          ports:
+          - containerPort: 3004
+name: sleepr
+namespace: default
+version: 23
