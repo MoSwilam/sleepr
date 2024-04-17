@@ -26,8 +26,6 @@ export class PaymentsService {
       //   card
       // });
 
-      console.log({ secret: this.secretKey });
-
       const paymentIntent = await this.stripe.paymentIntents.create({
         amount: amount * 100,
         currency: 'usd',
