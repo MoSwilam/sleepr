@@ -6,14 +6,14 @@ spec:
   rules:
   - http:
       paths:
-      - path: /reservations
+      - path: /reservations/*
         pathType: ImplementationSpecific
         backend:
           service:
             name: reservations
             port:
               number: 3004
-      - path: /auth
+      - path: /auth/*
         pathType: ImplementationSpecific
         backend:
           service:
