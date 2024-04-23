@@ -4,10 +4,12 @@ import { AuthService } from './auth.service';
 import { UsersModule } from './users/users.module';
 import { HealthModule, LoggerModule } from '@app/common';
 import { JwtModule } from '@nestjs/jwt';
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
 import { LocalStrategy } from './strategies/local.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { LoggingInterceptor } from '@app/common/interceptors/logging.interceptor';
 
 @Module({
   imports: [
@@ -34,9 +36,9 @@ import { JwtStrategy } from './strategies/jwt.strategy';
       }),
       inject: [ConfigService],
     }),
-    HealthModule
+    HealthModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService, LocalStrategy, JwtStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy], // { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor }
 })
 export class AuthModule {}
