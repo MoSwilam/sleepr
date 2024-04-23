@@ -1,10 +1,10 @@
 import { ping } from 'tcp-ping';
 // check the health of the reservation app
 describe('HealthCheck', () => {
-  beforeEach(async () => {
-    // Simple retry mechanism or delay
-    await new Promise(resolve => setTimeout(resolve, 2000)); // wait 5 seconds before starting tests
-  });
+  // beforeEach(async () => {
+  //   // Simple retry mechanism or delay
+  //   await new Promise(resolve => setTimeout(resolve, 4000)); // wait 5 seconds before starting tests
+  // });
 
   test('Reservations', async () => {
     const res = await fetch('http://reservations:3000')
