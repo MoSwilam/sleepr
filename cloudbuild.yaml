@@ -6,7 +6,7 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/auth/production:1.0.1',
+        'europe-central2-docker.pkg.dev/sleepr-417301/auth/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)',
         '-f',
         'apps/auth/Dockerfile',
         '.',
@@ -14,7 +14,7 @@ steps:
 
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/auth/production:1.0.1']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/auth/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)']
 
 
 
@@ -25,14 +25,14 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production:1.0.1',
+        'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)',
         '-f',
         'apps/reservations/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production:1.0.1']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)']
 
 
   # PAYMENTS APP
@@ -42,14 +42,14 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/payments/production:1.0.1',
+        'europe-central2-docker.pkg.dev/sleepr-417301/payments/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)',
         '-f',
         'apps/payments/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/payments/production:1.0.1']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/payments/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)']
 
 
   # notifications APP
@@ -59,11 +59,11 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production:1.0.1',
+        'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)',
         '-f',
         'apps/notifications/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production:1.0.1']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production:$(git describe --tags --abbrev=7)-$(date +%Y%m%d)']
