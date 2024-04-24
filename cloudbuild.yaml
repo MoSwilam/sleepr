@@ -1,6 +1,16 @@
 steps:
   # AUTH APP
   # BUILD DOCKER IMAGE
+
+  - name: 'ubuntu'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo echo $(git describe --tags --abbrev=7)
+        echo $(date +%Y%m%d)
+        echo "Full tag: $(git describe --tags --abbrev=7)-$(date +%Y%m%d)"
+
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
