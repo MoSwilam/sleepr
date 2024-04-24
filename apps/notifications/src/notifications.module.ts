@@ -18,7 +18,7 @@ import Joi from 'joi';
         SMTP_USER: Joi.string().required(),
       }),
     }),
-    LoggerModule
+    LoggerModule,
   ],
   controllers: [NotificationsController],
   providers: [NotificationsService],

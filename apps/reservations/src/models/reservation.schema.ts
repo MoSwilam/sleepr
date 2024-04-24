@@ -1,5 +1,5 @@
-import { AbstractDocument } from "@app/common/database";
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { AbstractDocument } from '@app/common/database';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema({ versionKey: false, collection: 'reservations' })
 export class ReservationDocument extends AbstractDocument {
@@ -19,4 +19,5 @@ export class ReservationDocument extends AbstractDocument {
   invoiceId: string;
 }
 
-export const ReservationSchema = SchemaFactory.createForClass(ReservationDocument);
+export const ReservationSchema =
+  SchemaFactory.createForClass(ReservationDocument);

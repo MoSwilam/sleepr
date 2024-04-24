@@ -16,12 +16,12 @@ export class NotificationsService {
       clientSecret: this.configService.get('GOOGLE_OAUTH_CLIENT_SECRET'),
       refreshToken: this.configService.get('GOOGLE_OAUTH_REFRESH_TOKEN'),
       accessToken: this.configService.get('GOOGLE_OAUTH_ACCESS_TOKEN'),
-    }
+    },
   });
 
   async notifyEmail({ email }: NotifyEmailDto) {
     try {
-      console.log(`--------- Sending email to ${email}`)
+      console.log(`--------- Sending email to ${email}`);
       // const res = await this.transporter.sendMail({
       //   from: this.configService.get('SMTP_USER'),
       //   to: email,
@@ -30,7 +30,7 @@ export class NotificationsService {
       // });
       // console.log({ res })
     } catch (error) {
-      console.log(`Error sending email: ${error}`)
+      console.log(`Error sending email: ${error}`);
     }
   }
 }

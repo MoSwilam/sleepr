@@ -10,22 +10,26 @@ import { map } from 'rxjs';
 export class ReservationsService {
   constructor(
     private readonly reservationsRepository: ReservationsRepository,
-    @Inject(PAYMENTS_SERVICE) private readonly paymentsClient: ClientProxy
+    @Inject(PAYMENTS_SERVICE) private readonly paymentsClient: ClientProxy,
   ) {}
 
-  async create(createReservationDto: CreateReservationDto, { email, _id: userId}: IUserDto) {
+  async create(
+    createReservationDto: CreateReservationDto,
+    { email, _id: userId }: IUserDto,
+  ) {
     return this.paymentsClient
-    .send('create_charge', { ...createReservationDto.charge, email })
-    .pipe(
-      map((res) => {
-      // console.log({ location: 'ReservationsService.create.subscribe' });
-      return this.reservationsRepository.create({
-        ...createReservationDto,
-        timestamp: new Date(),
-        invoiceId: res.id,
-        userId
-      });
-    }));
+      .send('create_charge', { ...createReservationDto.charge, email })
+      .pipe(
+        map((res) => {
+          // console.log({ location: 'ReservationsService.create.subscribe' });
+          return this.reservationsRepository.create({
+            ...createReservationDto,
+            timestamp: new Date(),
+            invoiceId: res.id,
+            userId,
+          });
+        }),
+      );
   }
 
   async findAll(userId: string) {

@@ -1,6 +1,12 @@
-import { Type } from "class-transformer";
-import { IsDate, IsDefined, IsNotEmpty, IsString, ValidateNested } from "class-validator";
-import { CreateChargeDto } from "@app/common";
+import { Type } from 'class-transformer';
+import {
+  IsDate,
+  IsDefined,
+  IsNotEmpty,
+  IsString,
+  ValidateNested,
+} from 'class-validator';
+import { CreateChargeDto } from '@app/common';
 
 export class CreateReservationDto {
   @IsDate()

@@ -8,15 +8,14 @@ import { PaymentsCreateChargeDto } from './dto/payments-create-charge.dto';
 @Injectable()
 export class PaymentsService {
   private secretKey = this.configService.get('STRIPE_SECRET_KEY');
-  private readonly stripe = new Stripe(this.secretKey,
-  {
+  private readonly stripe = new Stripe(this.secretKey, {
     apiVersion: '2023-10-16',
   });
 
   constructor(
     private readonly configService: ConfigService,
     @Inject(NOTIFICATIONS_SERVICE)
-    private readonly notificationsClient: ClientProxy
+    private readonly notificationsClient: ClientProxy,
   ) {}
 
   async createCharge({ card, amount, email }: PaymentsCreateChargeDto) {
@@ -38,7 +37,7 @@ export class PaymentsService {
 
       return paymentIntent;
     } catch (error) {
-      throw new BadRequestException(error.message)
+      throw new BadRequestException(error.message);
     }
   }
 }

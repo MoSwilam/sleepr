@@ -1,4 +1,8 @@
-import { Injectable, UnauthorizedException, UnprocessableEntityException } from '@nestjs/common';
+import {
+  Injectable,
+  UnauthorizedException,
+  UnprocessableEntityException,
+} from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserRepository } from './user.repository';
 import * as bcrypt from 'bcryptjs';
@@ -12,12 +16,14 @@ export class UsersService {
     await this.validaUserDto(data);
     return await this.userRepository.create({
       ...data,
-      password: await bcrypt.hash(data.password, 10)
+      password: await bcrypt.hash(data.password, 10),
     });
   }
 
   async validaUserDto(data: CreateUserDto) {
-    const user = await this.userRepository.isDocumentExists({ email: data.email });
+    const user = await this.userRepository.isDocumentExists({
+      email: data.email,
+    });
     if (user) {
       throw new UnprocessableEntityException('User already exists');
     }

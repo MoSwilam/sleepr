@@ -15,8 +15,8 @@ async function bootstrap() {
   app.useLogger(app.get(Logger));
   app.connectMicroservice({
     transport: Transport.TCP,
-    options: { host: '0.0.0.0', port: configService.get('TCP_PORT') }
-  })
+    options: { host: '0.0.0.0', port: configService.get('TCP_PORT') },
+  });
 
   const options = new DocumentBuilder()
     .addBearerAuth()
@@ -30,6 +30,10 @@ async function bootstrap() {
 
   await app.startAllMicroservices();
   await app.listen(configService.get<number>('HTTP_PORT'));
-  console.log(`-------------==- Auth App is running on: ${configService.get('HTTP_PORT')} ------------`);
+  console.log(
+    `-------------==- Auth App is running on: ${configService.get(
+      'HTTP_PORT',
+    )} ------------`,
+  );
 }
 bootstrap();

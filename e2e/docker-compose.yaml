@@ -16,7 +16,7 @@ services:
     ports:
       - 3000:3000
   auth:
-    image: europe-central2-docker.pkg.dev/sleepr-417301/auth/production:1.0.1
+    image: auth:custom-v1.0.2 #europe-central2-docker.pkg.dev/sleepr-417301/auth/production:1.0.1
     env_file:
       - ../apps/auth/.env
     ports:

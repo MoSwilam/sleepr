@@ -1,6 +1,6 @@
-import { FilterQuery, Model, Types, UpdateQuery } from "mongoose";
-import { AbstractDocument } from "./abstract.schema";
-import { Logger, NotFoundException } from "@nestjs/common";
+import { FilterQuery, Model, Types, UpdateQuery } from 'mongoose';
+import { AbstractDocument } from './abstract.schema';
+import { Logger, NotFoundException } from '@nestjs/common';
 
 export abstract class AbstractRepository<TDocument extends AbstractDocument> {
   protected abstract readonly logger: Logger;
@@ -17,9 +17,11 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
   }
 
   async findOne(filterQuery: FilterQuery<TDocument>): Promise<TDocument> {
-    const document = await this.model.findOne(filterQuery).lean<TDocument>(true);
+    const document = await this.model
+      .findOne(filterQuery)
+      .lean<TDocument>(true);
 
-    if(!document) {
+    if (!document) {
       this.logger.warn('Document not found', filterQuery);
       throw new NotFoundException(`Document was not found!`);
     }
@@ -27,18 +29,21 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     return document;
   }
 
-  async isDocumentExists(filterQuery: FilterQuery<TDocument>): Promise<boolean> {
-    return !!await this.model.exists(filterQuery);
+  async isDocumentExists(
+    filterQuery: FilterQuery<TDocument>,
+  ): Promise<boolean> {
+    return !!(await this.model.exists(filterQuery));
   }
 
   async findOneAndUpdate(
     filterQuery: FilterQuery<TDocument>,
-    update: UpdateQuery<TDocument>
+    update: UpdateQuery<TDocument>,
   ): Promise<TDocument> {
-    const document = await this.model.findOneAndUpdate(filterQuery, update, { new: true })
-    .lean<TDocument>(true);
+    const document = await this.model
+      .findOneAndUpdate(filterQuery, update, { new: true })
+      .lean<TDocument>(true);
 
-    if(!document) {
+    if (!document) {
       this.logger.warn('Document not found', filterQuery);
       throw new NotFoundException(`Document was not found!`);
     }
@@ -50,7 +55,9 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     return this.model.find(filterQuery).lean<TDocument[]>(true);
   }
 
-  async findOneAndDelete(filterQuery: FilterQuery<TDocument>): Promise<TDocument> {
+  async findOneAndDelete(
+    filterQuery: FilterQuery<TDocument>,
+  ): Promise<TDocument> {
     return this.model.findOneAndDelete(filterQuery).lean<TDocument>(true);
   }
 }

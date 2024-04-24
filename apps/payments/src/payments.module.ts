@@ -35,11 +35,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           },
         }),
         inject: [ConfigService],
-      }
-    ])
+      },
+    ]),
   ],
   controllers: [PaymentsController],
   providers: [PaymentsService],
 })
 export class PaymentsModule {}
-

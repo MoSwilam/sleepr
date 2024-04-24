@@ -11,11 +11,15 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: '0.0.0.0',
-      port: configService.get('PORT')
-    }
-  })
-  app.useLogger(app.get(Logger))
+      port: configService.get('PORT'),
+    },
+  });
+  app.useLogger(app.get(Logger));
   await app.startAllMicroservices();
-  console.log(`------------ Notifications App is running on: ${configService.get('PORT')} ------------`);
+  console.log(
+    `------------ Notifications App is running on: ${configService.get(
+      'PORT',
+    )} ------------`,
+  );
 }
 bootstrap();

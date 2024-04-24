@@ -32,7 +32,7 @@ import { LoggingInterceptor } from '@app/common/interceptors/logging.interceptor
         secret: configService.get<string>('JWT_SECRET'),
         signOptions: {
           expiresIn: `${configService.get<string>('JWT_EXPIRATION')}s`,
-         },
+        },
       }),
       inject: [ConfigService],
     }),

@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+} from '@nestjs/common';
 import { ReservationsService } from './reservations.service';
 import { CreateReservationDto } from './dto/create-reservation.dto';
 import { UpdateReservationDto } from './dto/update-reservation.dto';
@@ -14,13 +23,19 @@ export class ReservationsController {
   @Post()
   @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Creates a new reservation' })
-  create(@Body() createReservationDto: CreateReservationDto, @CurrentUser() user: IUserDto) {
+  create(
+    @Body() createReservationDto: CreateReservationDto,
+    @CurrentUser() user: IUserDto,
+  ) {
     return this.reservationsService.create(createReservationDto, user);
   }
 
   @Get()
   @UseGuards(JwtAuthGuard)
-  @ApiOperation({ summary: 'Retrieves a list of reservations that belongs to the current authenticated user' })
+  @ApiOperation({
+    summary:
+      'Retrieves a list of reservations that belongs to the current authenticated user',
+  })
   findAll(@CurrentUser() user: IUserDto) {
     return this.reservationsService.findAll(user._id);
   }
@@ -29,13 +44,16 @@ export class ReservationsController {
   @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Get user by Id' })
   findOne(@Param('id') id: string) {
-    return this.reservationsService.findOne(id)
+    return this.reservationsService.findOne(id);
   }
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: 'Update reservation by its Id' })
-  update(@Param('id') id: string, @Body() updateReservationDto: UpdateReservationDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateReservationDto: UpdateReservationDto,
+  ) {
     return this.reservationsService.update(id, updateReservationDto);
   }
 

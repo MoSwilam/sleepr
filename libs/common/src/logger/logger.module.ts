@@ -11,9 +11,9 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
             ignore: 'pid,hostname,res,req',
             singleLine: true,
           },
-        }
-      }
+        },
+      },
     }),
-  ]
+  ],
 })
 export class LoggerModule {}
