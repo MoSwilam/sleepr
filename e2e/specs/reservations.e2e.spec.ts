@@ -1,9 +1,9 @@
 describe('Reservations', () => {
+  let jwt: string;
   const user = {
     email: 'moeswilliam91@gmail.com',
     password: 'SuperSecretPassword123!'
   }
-
 
   beforeAll(async () => {
     await fetch('http://auth:3001/users', {
@@ -22,28 +22,47 @@ describe('Reservations', () => {
       }
     });
 
-    const jwt = await response.text();
-
-    console.log({ jwtFromTest: jwt });
+    jwt = await response.text();
   })
 
-  test('Create a reservation', async () => {
-    expect(true).toBeTruthy();
-    // const reservation = {
-    //   date: '2022-01-01',
-    //   time: '12:00',
-    //   party: 2
-    // }
+  test('Create and Get reservation', async () => {
+    const createdReservation = await createReservation();
+    const responseGet = await fetch(`http://reservations:3000/reservations/${createdReservation._id}`, {
+      headers: {
+        Authentication: `${jwt}`
+      }
+    });
 
-    // const response = await fetch('http://reservations:3000/reservations', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Authorization': `Bearer ${jwt}`,
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(reservation)
-    // });
-
-    // expect(response.ok).toBeTruthy();
+    expect(responseGet.ok).toBeTruthy();
+    const fetchedReservation = await responseGet.json();
+    console.log({ createdReservation, fetchedReservation });
+    expect(fetchedReservation).toEqual(createdReservation);
   })
+
+  const createReservation = async () => {
+    const responseCreate = await fetch('http://reservations:3000/reservations', {
+      method: 'POST',
+      headers: {
+        Authentication: `${jwt}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        startDate: "04-02-2024",
+        endDate: "05-02-2024",
+        placeId: "123",
+        charge: {
+          amount: 57,
+          card: {
+            cvc: "413",
+            exp_month: 12,
+            exp_year: 2027,
+            number: "4242 4242 4242 4242"
+          }
+        }
+      })
+    });
+
+    expect(responseCreate.ok).toBeTruthy();
+    return await responseCreate.json();
+  }
 })
