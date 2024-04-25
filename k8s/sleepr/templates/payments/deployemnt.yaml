@@ -15,7 +15,7 @@ spec:
         app: payments
     spec:
       containers:
-      - image: europe-central2-docker.pkg.dev/sleepr-417301/payments/production:1.0.1
+      - image: europe-central2-docker.pkg.dev/sleepr-417301/payments/production:1.0.2
         name: payments
         env:
         - name: PORT
