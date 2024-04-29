@@ -3,7 +3,6 @@ import {
   IsDate,
   IsDefined,
   IsNotEmpty,
-  IsString,
   ValidateNested,
 } from 'class-validator';
 import { CreateChargeDto } from '@app/common';

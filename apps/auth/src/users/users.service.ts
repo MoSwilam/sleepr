@@ -7,6 +7,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UserRepository } from './user.repository';
 import * as bcrypt from 'bcryptjs';
 import { GetUserDto } from './dto/get-user.dto';
+import { User } from '@app/common';
 
 @Injectable()
 export class UsersService {
@@ -14,10 +15,11 @@ export class UsersService {
 
   async createUser(data: CreateUserDto) {
     await this.validaUserDto(data);
-    return await this.userRepository.create({
+    const user = new User({
       ...data,
       password: await bcrypt.hash(data.password, 10),
     });
+    return await this.userRepository.create(user);
   }
 
   async validaUserDto(data: CreateUserDto) {

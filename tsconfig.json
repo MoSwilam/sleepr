@@ -24,7 +24,8 @@
       ],
       "@app/common/*": [
         "libs/common/src/*"
-      ]
+      ],
+      "*": ["node_modules/*"]
     }
   }
 }
