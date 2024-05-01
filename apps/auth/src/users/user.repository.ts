@@ -1,9 +1,7 @@
 import { User } from '@app/common';
 import { AbstractRepository } from '@app/common/database/abstract.repository';
-import { Inject, Injectable, Logger } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
+import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Model } from 'mongoose';
 import { EntityManager, Repository } from 'typeorm';
 
 @Injectable()

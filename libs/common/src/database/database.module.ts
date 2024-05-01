@@ -14,7 +14,7 @@ import { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity-clas
         database: configService.getOrThrow('MYSQL_DATABASE'),
         username: configService.getOrThrow('MYSQL_USERNAME'),
         password: configService.getOrThrow('MYSQL_PASSWORD'),
-        syncronize: configService.getOrThrow('MYSQL_SYNCHRONIZE'),
+        synchronize: configService.getOrThrow('MYSQL_SYNCHRONIZE'),
         autoLoadEntities: true,
       }),
       inject: [ConfigService],
