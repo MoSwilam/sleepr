@@ -23,7 +23,7 @@ export class UsersService {
   }
 
   async validaUserDto(data: CreateUserDto) {
-    const user = await this.userRepository.isDocumentExists({
+    const user = await this.userRepository.getOne({
       email: data.email,
     });
     if (user) {

@@ -45,7 +45,7 @@ export class ReservationsService {
   async update(id: number, updateReservationDto: UpdateReservationDto) {
     return this.reservationsRepository.findOneAndUpdate(
       { id },
-      updateReservationDto
+      updateReservationDto,
     );
   }
 

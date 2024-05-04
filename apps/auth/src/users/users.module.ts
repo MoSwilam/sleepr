@@ -5,10 +5,7 @@ import { DatabaseModule, User } from '@app/common';
 import { UserRepository } from './user.repository';
 
 @Module({
-  imports: [
-    DatabaseModule,
-    DatabaseModule.forFeature([User]),
-  ],
+  imports: [DatabaseModule, DatabaseModule.forFeature([User])],
   controllers: [UsersController],
   providers: [UsersService, UserRepository],
   exports: [UsersService, UserRepository],

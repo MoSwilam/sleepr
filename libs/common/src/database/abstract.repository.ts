@@ -7,7 +7,10 @@ import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity
 export abstract class AbstractRepository<T extends AbstractEntity<T>> {
   protected abstract readonly logger: Logger;
 
-  constructor(private readonly entityRepo: Repository<T>, private readonly entityManager: EntityManager) {}
+  constructor(
+    private readonly entityRepo: Repository<T>,
+    private readonly entityManager: EntityManager,
+  ) {}
 
   async create(entity: T): Promise<T> {
     return this.entityRepo.save(entity);
@@ -24,17 +27,15 @@ export abstract class AbstractRepository<T extends AbstractEntity<T>> {
     return entity;
   }
 
-  async isDocumentExists(
-    where: FindOptionsWhere<T>,
-  ): Promise<boolean> {
-    return !!(await this.findOne(where));
+  async getOne(where: FindOptionsWhere<T>) {
+    return this.entityRepo.findOne({ where });
   }
 
   async findOneAndUpdate(
     where: FindOptionsWhere<T>,
     query: QueryDeepPartialEntity<T>,
   ): Promise<T> {
-    const updateResult = await this.entityRepo.update(where, query); 
+    const updateResult = await this.entityRepo.update(where, query);
 
     if (!updateResult.affected) {
       this.logger.warn('Entity not found', where);
@@ -48,9 +49,7 @@ export abstract class AbstractRepository<T extends AbstractEntity<T>> {
     return this.entityRepo.findBy(where);
   }
 
-  async findOneAndDelete(
-    where: FindOptionsWhere<T>
-  ) {
+  async findOneAndDelete(where: FindOptionsWhere<T>) {
     return this.entityRepo.delete(where);
   }
 }
