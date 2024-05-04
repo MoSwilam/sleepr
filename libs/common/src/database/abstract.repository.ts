@@ -27,10 +27,10 @@ export abstract class AbstractRepository<T extends AbstractEntity<T>> {
     return entity;
   }
 
-  async isDocumentExists(
+  async getOne(
     where: FindOptionsWhere<T>,
-  ): Promise<boolean> {
-    return !!(await this.findOne(where));
+  ) {
+    return await this.entityRepo.findOne({ where });
   }
 
   async findOneAndUpdate(

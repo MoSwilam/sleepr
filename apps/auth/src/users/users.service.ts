@@ -14,18 +14,16 @@ export class UsersService {
   constructor(private readonly userRepository: UserRepository) {}
 
   async createUser(data: CreateUserDto) {
-    console.log('-------------------- USER SERVICE BEFORE VALIDATE -------------------');
     await this.validaUserDto(data);
     const user = new User({
       ...data,
       password: await bcrypt.hash(data.password, 10),
     });
-    console.log('-------------------- USER SERVICE AFTER VALIDATE -------------------');
     return await this.userRepository.create(user);
   }
 
   async validaUserDto(data: CreateUserDto) {
-    const user = await this.userRepository.isDocumentExists({
+    const user = await this.userRepository.getOne({
       email: data.email,
     });
     if (user) {

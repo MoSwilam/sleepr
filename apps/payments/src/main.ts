@@ -11,6 +11,7 @@ async function bootstrap() {
     transport: Transport.RMQ,
     options: {
       urls: [configService.get<string>('RABBITMQ_URI')],
+      noAck: false, // We want to ack messages manually
       queue: 'payments_queue',
     },
   });
