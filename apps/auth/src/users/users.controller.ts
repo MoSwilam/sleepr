@@ -13,6 +13,7 @@ export class UsersController {
   @Post()
   @ApiOperation({ summary: 'Creates a new user' })
   createUser(@Body() data: CreateUserDto) {
+    console.log('-------------------- USER CONTROLLER -------------------');
     return this.usersService.createUser(data);
   }
 

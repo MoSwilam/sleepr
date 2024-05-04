@@ -10,7 +10,10 @@ export abstract class AbstractRepository<T extends AbstractEntity<T>> {
   constructor(private readonly entityRepo: Repository<T>, private readonly entityManager: EntityManager) {}
 
   async create(entity: T): Promise<T> {
-    return this.entityRepo.save(entity);
+    console.log('-------------------- ABSTRACT REPOSITORY BEFORE SAVE -------------------');
+    const savedEntity = await this.entityRepo.save(entity);
+    console.log('-------------------- ABSTRACT REPOSITORY AFTER SAVE -------------------');
+    return savedEntity;
   }
 
   async findOne(where: FindOptionsWhere<T>): Promise<T> {
