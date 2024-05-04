@@ -14,8 +14,11 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.useLogger(app.get(Logger))
   app.connectMicroservice({
-    transport: Transport.TCP,
-    options: { host: '0.0.0.0', port: configService.get('TCP_PORT') },
+    transport: Transport.RMQ,
+    options: {
+      urls: [configService.get<string>('RABBITMQ_URI')],
+      queue: 'auth_queue',
+    },
   });
 
   const options = new DocumentBuilder()

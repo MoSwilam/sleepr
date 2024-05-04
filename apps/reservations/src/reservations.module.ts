@@ -5,6 +5,7 @@ import {
   DatabaseModule,
   HealthModule,
   LoggerModule,
+  NOTIFICATIONS_SERVICE,
   PAYMENTS_SERVICE,
 } from '@app/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -35,10 +36,10 @@ import { ReservationRepo } from './reservations.repository';
       {
         name: AUTH_SERVICE,
         useFactory: (configService: ConfigService) => ({
-          transport: Transport.TCP,
+          transport: Transport.RMQ,
           options: {
-            host: configService.get('AUTH_HOST'),
-            port: configService.get('AUTH_PORT'),
+            urls: [configService.get<string>('RABBITMQ_URI')],
+            queue: 'auth_queue',
           },
         }),
         inject: [ConfigService],
@@ -46,14 +47,14 @@ import { ReservationRepo } from './reservations.repository';
       {
         name: PAYMENTS_SERVICE,
         useFactory: (configService: ConfigService) => ({
-          transport: Transport.TCP,
+          transport: Transport.RMQ,
           options: {
-            host: configService.get('PAYMENTS_HOST'),
-            port: configService.get('PAYMENTS_PORT'),
+            urls: [configService.get<string>('RABBITMQ_URI')],
+            queue: 'payments_queue',
           },
         }),
         inject: [ConfigService],
-      },
+      }
     ]),
     HealthModule,
   ],
