@@ -33,5 +33,6 @@ RUN pnpm install --only=production
 COPY . .
 
 COPY --from=development /usr/src/app/dist ./dist
+COPY proto proto
 
 CMD ["node", "dist/apps/payments/main"]

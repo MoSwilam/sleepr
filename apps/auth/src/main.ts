@@ -6,16 +6,22 @@ import { Logger } from 'nestjs-pino';
 import { Transport } from '@nestjs/microservices';
 import cookieParser from 'cookie-parser';
 import { ConfigService } from '@nestjs/config';
+import { AUTH_PACKAGE_NAME } from '@app/common';
+import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create(AuthModule);
   const configService = app.get(ConfigService);
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-  app.useLogger(app.get(Logger))
+  app.useLogger(app.get(Logger));
   app.connectMicroservice({
-    transport: Transport.TCP,
-    options: { host: '0.0.0.0', port: configService.get('TCP_PORT') },
+    transport: Transport.GRPC,
+    options: {
+      url: `${configService.get('AUTH_GRPC_URL')}`,
+      package: AUTH_PACKAGE_NAME,
+      protoPath: join(__dirname, '../../../proto/auth.proto'),
+    },
   });
 
   const options = new DocumentBuilder()

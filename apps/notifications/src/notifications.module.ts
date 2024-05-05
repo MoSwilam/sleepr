@@ -11,7 +11,6 @@ import Joi from 'joi';
       isGlobal: true,
       envFilePath: '../.env',
       validationSchema: Joi.object({
-        PORT: Joi.number().required(),
         GOOGLE_OAUTH_CLIENT_ID: Joi.string().required(),
         GOOGLE_OAUTH_CLIENT_SECRET: Joi.string().required(),
         GOOGLE_OAUTH_REFRESH_TOKEN: Joi.string().required(),
