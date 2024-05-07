@@ -17,6 +17,8 @@ import * as Joi from 'joi';
 import { Transport } from '@nestjs/microservices';
 import { Client, ClientsModule } from '@nestjs/microservices';
 import { AUTH_SERVICE } from '@app/common';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriverConfig, ApolloFederationDriver } from '@nestjs/apollo';
 
 @Module({
   imports: [
@@ -27,6 +29,12 @@ import { AUTH_SERVICE } from '@app/common';
         schema: ReservationSchema,
       },
     ]),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloFederationDriver,
+      autoSchemaFile: {
+        federation: 2,
+      },
+    }),
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '../.env',

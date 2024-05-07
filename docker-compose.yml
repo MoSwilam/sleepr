@@ -4,11 +4,16 @@ services:
       context: .
       dockerfile: ./apps/reservations/Dockerfile
       target: development
-    command: npm run start:dev reservations
+    command: pnpm run start:dev reservations
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     env_file:
       - ./apps/reservations/.env
     ports:
-      - 3000:3000
+      - '3000:3000'
     volumes:
       - .:/usr/src/app
   auth:
@@ -16,11 +21,16 @@ services:
       context: .
       dockerfile: ./apps/auth/Dockerfile
       target: development
-    command: npm run start:dev auth
+    command: pnpm run start:dev auth
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     env_file:
       - ./apps/auth/.env
     ports:
-      - 3001:3001
+      - '3001:3001'
     volumes:
       - .:/usr/src/app
   payments:
@@ -28,7 +38,7 @@ services:
       context: .
       dockerfile: ./apps/payments/Dockerfile
       target: development
-    command: npm run start:dev payments
+    command: pnpm run start:dev payments
     env_file:
       - ./apps/payments/.env
     volumes:
@@ -38,7 +48,7 @@ services:
       context: .
       dockerfile: ./apps/notifications/Dockerfile
       target: development
-    command: npm run start:dev notifications
+    command: pnpm run start:dev notifications
     env_file:
       - ./apps/notifications/.env
     volumes:
@@ -48,7 +58,7 @@ services:
       context: .
       dockerfile: ./apps/gateway/Dockerfile
       target: development
-    command: pnpm run start:dev gateway
+    command: sh -c "sleep 10 && pnpm run start:dev gateway"
     env_file:
       - ./apps/gateway/.env
     volumes:
