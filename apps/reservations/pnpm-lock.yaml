@@ -1,0 +1,154 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@prisma/client':
+        specifier: ^5.15.0
+        version: 5.15.0(prisma@5.15.0)
+      prisma:
+        specifier: ^5.15.0
+        version: 5.15.0
+    devDependencies:
+      dotenv-cli:
+        specifier: ^7.4.2
+        version: 7.4.2
+
+packages:
+
+  '@prisma/client@5.15.0':
+    resolution: {integrity: sha512-wPTeTjbd2Q0abOeffN7zCDCbkp9C9cF+e9HPiI64lmpehyq2TepgXE+sY7FXr7Rhbb21prLMnhXX27/E11V09w==}
+    engines: {node: '>=16.13'}
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+
+  '@prisma/debug@5.15.0':
+    resolution: {integrity: sha512-QpEAOjieLPc/4sMny/WrWqtpIAmBYsgqwWlWwIctqZO0AbhQ9QcT6x2Ut3ojbDo/pFRCCA1Z1+xm2MUy7fAkZA==}
+
+  '@prisma/engines-version@5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022':
+    resolution: {integrity: sha512-3BEgZ41Qb4oWHz9kZNofToRvNeS4LZYaT9pienR1gWkjhky6t6K1NyeWNBkqSj2llgraUNbgMOCQPY4f7Qp5wA==}
+
+  '@prisma/engines@5.15.0':
+    resolution: {integrity: sha512-hXL5Sn9hh/ZpRKWiyPA5GbvF3laqBHKt6Vo70hYqqOhh5e0ZXDzHcdmxNvOefEFeqxra2DMz2hNbFoPvqrVe1w==}
+
+  '@prisma/fetch-engine@5.15.0':
+    resolution: {integrity: sha512-z6AY5yyXxc20Klj7wwnfGP0iIUkVKzybqapT02zLYR/nf9ynaeN8bq73WRmi1TkLYn+DJ5Qy+JGu7hBf1pE78A==}
+
+  '@prisma/get-platform@5.15.0':
+    resolution: {integrity: sha512-1GULDkW4+/VQb73vihxCBSc4Chc2x88MA+O40tcZFjmBzG4/fF44PaXFxUqKSFltxU9L9GIMLhh0Gfkk/pUbtg==}
+
+  cross-spawn@7.0.3:
+    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+    engines: {node: '>= 8'}
+
+  dotenv-cli@7.4.2:
+    resolution: {integrity: sha512-SbUj8l61zIbzyhIbg0FwPJq6+wjbzdn9oEtozQpZ6kW2ihCcapKVZj49oCT3oPM+mgQm+itgvUQcG5szxVrZTA==}
+    hasBin: true
+
+  dotenv-expand@10.0.0:
+    resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
+    engines: {node: '>=12'}
+
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
+
+  isexe@2.0.0:
+    resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+
+  minimist@1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+
+  path-key@3.1.1:
+    resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
+    engines: {node: '>=8'}
+
+  prisma@5.15.0:
+    resolution: {integrity: sha512-JA81ACQSCi3a7NUOgonOIkdx8PAVkO+HbUOxmd00Yb8DgIIEpr2V9+Qe/j6MLxIgWtE/OtVQ54rVjfYRbZsCfw==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+
+  shebang-command@2.0.0:
+    resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
+    engines: {node: '>=8'}
+
+  shebang-regex@3.0.0:
+    resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
+    engines: {node: '>=8'}
+
+  which@2.0.2:
+    resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
+    engines: {node: '>= 8'}
+    hasBin: true
+
+snapshots:
+
+  '@prisma/client@5.15.0(prisma@5.15.0)':
+    optionalDependencies:
+      prisma: 5.15.0
+
+  '@prisma/debug@5.15.0': {}
+
+  '@prisma/engines-version@5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022': {}
+
+  '@prisma/engines@5.15.0':
+    dependencies:
+      '@prisma/debug': 5.15.0
+      '@prisma/engines-version': 5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022
+      '@prisma/fetch-engine': 5.15.0
+      '@prisma/get-platform': 5.15.0
+
+  '@prisma/fetch-engine@5.15.0':
+    dependencies:
+      '@prisma/debug': 5.15.0
+      '@prisma/engines-version': 5.15.0-29.12e25d8d06f6ea5a0252864dd9a03b1bb51f3022
+      '@prisma/get-platform': 5.15.0
+
+  '@prisma/get-platform@5.15.0':
+    dependencies:
+      '@prisma/debug': 5.15.0
+
+  cross-spawn@7.0.3:
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+
+  dotenv-cli@7.4.2:
+    dependencies:
+      cross-spawn: 7.0.3
+      dotenv: 16.4.5
+      dotenv-expand: 10.0.0
+      minimist: 1.2.8
+
+  dotenv-expand@10.0.0: {}
+
+  dotenv@16.4.5: {}
+
+  isexe@2.0.0: {}
+
+  minimist@1.2.8: {}
+
+  path-key@3.1.1: {}
+
+  prisma@5.15.0:
+    dependencies:
+      '@prisma/engines': 5.15.0
+
+  shebang-command@2.0.0:
+    dependencies:
+      shebang-regex: 3.0.0
+
+  shebang-regex@3.0.0: {}
+
+  which@2.0.2:
+    dependencies:
+      isexe: 2.0.0

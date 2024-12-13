@@ -9,7 +9,7 @@ import { map } from 'rxjs';
 @Injectable()
 export class ReservationsService {
   constructor(
-    private readonly reservationsRepository: ReservationsRepository,
+    
     @Inject(PAYMENTS_SERVICE) private readonly paymentsClient: ClientProxy,
   ) {}
 

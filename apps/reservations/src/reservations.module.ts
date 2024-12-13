@@ -8,30 +8,22 @@ import {
   PAYMENTS_SERVICE,
 } from '@app/common';
 import { ReservationsRepository } from './reservations.repository';
-import {
-  ReservationDocument,
-  ReservationSchema,
-} from './models/reservation.schema';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
 import { Transport } from '@nestjs/microservices';
 import { Client, ClientsModule } from '@nestjs/microservices';
 import { AUTH_SERVICE } from '@app/common';
+import { PrismaService } from '../prisma.service';
+
 
 @Module({
   imports: [
-    DatabaseModule,
-    DatabaseModule.forFeature([
-      {
-        name: ReservationDocument.name,
-        schema: ReservationSchema,
-      },
-    ]),
+    
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '../.env',
       validationSchema: Joi.object({
-        MONGODB_URI: Joi.string().required(),
+        DATABASE_URL: Joi.string().required(),
         PORT: Joi.number().required(),
         AUTH_HOST: Joi.string().required(),
         AUTH_PORT: Joi.number().required(),
@@ -67,7 +59,7 @@ import { AUTH_SERVICE } from '@app/common';
     HealthModule,
   ],
   controllers: [ReservationsController],
-  providers: [ReservationsService, ReservationsRepository],
+  providers: [ReservationsService, PrismaService],
   exports: [ReservationsService, ReservationsRepository],
 })
 export class ReservationsModule {}

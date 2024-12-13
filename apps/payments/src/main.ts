@@ -18,7 +18,7 @@ async function bootstrap() {
   await app.startAllMicroservices();
   console.log(
     `------------ Payments App is running on: ${configService.get(
-      'PORT',
+      'HTTP_PORT',
     )} ------------`,
   );
 }
