@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
+import { User } from '.prisma/client';
 import { CurrentUser } from '../../../../libs/common/src/decorators/current-user.decorator';
 import { JwtAuthGuard } from '../guards/jwt-auth.guard';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
@@ -18,7 +19,7 @@ export class UsersController {
 
   @Get()
   @UseGuards(JwtAuthGuard)
-  async getUsers(@CurrentUser() user: any) {
+  async getUsers(@CurrentUser() user: User) {
     return user;
   }
 }

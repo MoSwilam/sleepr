@@ -4,9 +4,8 @@ import { AuthService } from './auth.service';
 import { UsersModule } from './users/users.module';
 import { HealthModule, LoggerModule } from '@app/common';
 import { JwtModule } from '@nestjs/jwt';
-import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import * as Joi from 'joi';
+import Joi from 'joi';
 import { LocalStrategy } from './strategies/local.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LoggingInterceptor } from '@app/common/interceptors/logging.interceptor';
@@ -19,7 +18,7 @@ import { LoggingInterceptor } from '@app/common/interceptors/logging.interceptor
       isGlobal: true,
       envFilePath: '../.env',
       validationSchema: Joi.object({
-        MONGODB_URI: Joi.string().required(),
+        DATABASE_URL: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         JWT_EXPIRATION: Joi.number().required(),
         HTTP_PORT: Joi.number().required(),

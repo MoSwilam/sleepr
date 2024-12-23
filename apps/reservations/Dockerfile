@@ -5,7 +5,6 @@ WORKDIR /usr/src/app
 # Install OpenSSL
 RUN apk add --no-cache openssl
 
-
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 COPY tsconfig.json tsconfig.json
@@ -14,7 +13,7 @@ COPY apps/reservations/prisma ./prisma
 
 RUN npm install -g pnpm
 
-RUN pnpm install -r
+RUN pnpm install
 
 RUN pnpm prisma generate
 
@@ -22,6 +21,8 @@ COPY apps/reservations apps/reservations
 COPY libs libs
 
 RUN pnpm run build reservations
+
+
 
 
 FROM node:alpine as production
