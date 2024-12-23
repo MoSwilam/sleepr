@@ -6,7 +6,11 @@ test-reset:
 
 
 clean:
-	cd apps/notifications && rm -rf node_modules pnpm-lock.yaml && pnpm install
-	cd apps/payments && rm -rf node_modules pnpm-lock.yaml && pnpm install
-	cd apps/auth && rm -rf node_modules pnpm-lock.yaml && pnpm install
+	@echo "Cleaning and reinstalling dependencies in app directories..."
+	@for dir in $(APPS); do \
+		echo "Processing $$dir..."; \
+		cd $$dir && rm -rf node_modules pnpm-lock.yaml && pnpm install; \
+	done
+	@echo "Cleaning and reinstalling dependencies in the root directory..."
 	rm -rf node_modules pnpm-lock.yaml && pnpm install
+	@echo "Clean and install completed successfully."

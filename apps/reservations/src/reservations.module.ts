@@ -2,23 +2,20 @@ import { Inject, Module } from '@nestjs/common';
 import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
 import {
-  DatabaseModule,
   HealthModule,
   LoggerModule,
   PAYMENTS_SERVICE,
 } from '@app/common';
-import { ReservationsRepository } from './reservations.repository';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
 import { Transport } from '@nestjs/microservices';
-import { Client, ClientsModule } from '@nestjs/microservices';
+import { ClientsModule } from '@nestjs/microservices';
 import { AUTH_SERVICE } from '@app/common';
-import { PrismaService } from '../prisma.service';
+import { PrismaService } from './prisma.service';
 
 
 @Module({
   imports: [
-    
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '../.env',
@@ -60,6 +57,6 @@ import { PrismaService } from '../prisma.service';
   ],
   controllers: [ReservationsController],
   providers: [ReservationsService, PrismaService],
-  exports: [ReservationsService, ReservationsRepository],
+  exports: [ReservationsService, PrismaService],
 })
 export class ReservationsModule {}
