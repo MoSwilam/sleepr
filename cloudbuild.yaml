@@ -78,3 +78,7 @@ steps:
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'europe-central2-docker.pkg.dev/sleepr2/notifications/prod:latest']
+
+
+options:
+  logging: CLOUD_LOGGING_ONLY
