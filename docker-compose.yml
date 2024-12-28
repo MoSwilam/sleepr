@@ -35,6 +35,9 @@ services:
     command: npm run start:dev payments
     env_file:
       - ./apps/payments/.env
+    ports:
+      - "3005:3005"  # Expose HTTP_PORT
+      - "3003:3003"  # Expose TCP_PORT
     volumes:
       - .:/usr/src/app
   notifications:

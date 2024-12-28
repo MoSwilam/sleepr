@@ -16,7 +16,7 @@
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.4.15",
     "@nestjs/swagger": "^7.1.17",
-    "@prisma/client": "5.17.0",
+    "@prisma/client": "5.12.1",
     "bcryptjs": "^2.4.3",
     "joi": "^17.13.0",
     "passport": "^0.6.0",

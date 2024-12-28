@@ -25,7 +25,7 @@ export class UsersService {
   }
 
   async validaUserDto(data: CreateUserDto) {
-    const user = await this.prismaService.user.findFirstOrThrow({
+    const user = await this.prismaService.user.findFirst({
       where: { email: data.email, }
     });
     if (user) {
