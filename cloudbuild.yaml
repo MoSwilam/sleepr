@@ -28,7 +28,6 @@ steps:
     args: ['push', 'europe-central2-docker.pkg.dev/sleepr2/auth/prod:latest']
 
 
-
   # RESERVATIONS APP
   # BUILD DOCKER IMAGE
   - name: 'gcr.io/cloud-builders/docker'
