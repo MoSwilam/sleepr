@@ -16,7 +16,7 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/auth/production:1.0.2',
+        'europe-central2-docker.pkg.dev/sleepr2/auth/prod:latest',
         '-f',
         'apps/auth/Dockerfile',
         '.',
@@ -24,7 +24,7 @@ steps:
 
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/auth/production:1.0.2']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr2/auth/prod:latest']
 
 
 
@@ -35,14 +35,14 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production:1.0.2',
+        'europe-central2-docker.pkg.dev/sleepr2/reservations/prod:latest',
         '-f',
         'apps/reservations/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/reservations/production:1.0.2']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr2/reservations/prod:latest']
 
 
   # PAYMENTS APP
@@ -52,14 +52,14 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/payments/production:1.0.2',
+        'europe-central2-docker.pkg.dev/sleepr2/payments/prod:latest',
         '-f',
         'apps/payments/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/payments/production:1.0.2']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr2/payments/prod:latest']
 
 
   # notifications APP
@@ -69,11 +69,11 @@ steps:
       [
         'build',
         '-t',
-        'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production:1.0.2',
+        'europe-central2-docker.pkg.dev/sleepr2/notifications/prod:latest',
         '-f',
         'apps/notifications/Dockerfile',
         '.',
       ]
   # PUSH DOCKER IMAGE TO GCP
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-central2-docker.pkg.dev/sleepr-417301/notifications/production:1.0.2']
+    args: ['push', 'europe-central2-docker.pkg.dev/sleepr2/notifications/prod:latest']
