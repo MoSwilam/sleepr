@@ -15,14 +15,11 @@ spec:
         app: reservations
     spec:
       containers:
-      - image: europe-central2-docker.pkg.dev/sleepr-417301/reservations/production:1.0.2
+      - image: europe-central2-docker.pkg.dev/sleepr2/reservations/prod:latest
         name: reservations
         env:
-        - name: MONGODB_URI
-          valueFrom:
-            secretKeyRef:
-              name: mongodb
-              key: connectionString
+        - name: DATABASE_URL
+          value: "postgresql://postgres:postgres@postgres:5432/auth"
         - name: PORT
           value: "3004"
         - name: AUTH_HOST
