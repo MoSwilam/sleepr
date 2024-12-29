@@ -9,7 +9,7 @@ COPY package.json ./
 COPY pnpm-lock.yaml ./
 COPY tsconfig.json tsconfig.json
 COPY nest-cli.json nest-cli.json
-COPY apps/reservations/prisma ./prisma
+COPY apps/reservations/prisma apps/reservations/prisma
 
 RUN npm install -g pnpm
 

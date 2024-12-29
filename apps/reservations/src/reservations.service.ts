@@ -29,14 +29,14 @@ export class ReservationsService {
               timeStamp: new Date(),
               invoiceId: res.id,
               userId,
-            }
+            },
           });
         }),
       );
   }
 
   async findAll() {
-    return this.prismaService.reservations.findMany({ });
+    return this.prismaService.reservations.findMany({});
   }
 
   async findOne(id: number) {
@@ -44,12 +44,10 @@ export class ReservationsService {
   }
 
   async update(id: number, updateReservationDto: UpdateReservationDto) {
-    return this.prismaService.reservations.update(
-      { 
-        where: { id },
-        data: updateReservationDto
-      }
-    );
+    return this.prismaService.reservations.update({
+      where: { id },
+      data: updateReservationDto,
+    });
   }
 
   async remove(id: number) {

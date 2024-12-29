@@ -1,18 +1,13 @@
 import { Inject, Module } from '@nestjs/common';
 import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
-import {
-  HealthModule,
-  LoggerModule,
-  PAYMENTS_SERVICE,
-} from '@app/common';
+import { HealthModule, LoggerModule, PAYMENTS_SERVICE } from '@app/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
 import { Transport } from '@nestjs/microservices';
 import { ClientsModule } from '@nestjs/microservices';
 import { AUTH_SERVICE } from '@app/common';
 import { PrismaService } from './prisma.service';
-
 
 @Module({
   imports: [

@@ -9,7 +9,7 @@ COPY package.json ./
 COPY pnpm-lock.yaml ./
 COPY tsconfig.json tsconfig.json
 COPY nest-cli.json nest-cli.json
-COPY apps/auth/prisma ./prisma
+COPY apps/auth/prisma apps/auth/prisma
 
 RUN npm install -g pnpm
 
@@ -24,8 +24,6 @@ RUN cd apps/auth && pnpm install
 
 
 RUN pnpm run build auth
-
-
 
 
 
