@@ -25,8 +25,9 @@ async function bootstrap() {
     .setVersion('1.0')
     .build();
 
-  const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup(`${process.env.SWAGGER_URI}`, app, document);
+    
+  // const document = SwaggerModule.createDocument(app, options);
+  // SwaggerModule.setup(`${process.env.SWAGGER_URI}`, app, document);
 
   await app.startAllMicroservices();
   await app.listen(configService.get<number>('HTTP_PORT'));
